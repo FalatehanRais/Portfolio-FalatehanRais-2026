@@ -1,0 +1,75 @@
+.section {
+  padding: 6rem 0;
+  background-color: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 30px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+  color: var(--red);
+  font-size: 0.9rem;
+}
+
+.quote {
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.8);
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  margin-top: auto;
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3f3f46, #18181b);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  flex-shrink: 0;
+}
+
+.author {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.role {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 767px) {
+  .grid { grid-template-columns: 1fr; }
+}

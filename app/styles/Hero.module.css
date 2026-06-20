@@ -1,0 +1,579 @@
+.section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg);
+}
+
+.glow {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background-color: var(--red);
+  border-radius: 50%;
+  filter: blur(180px);
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.topContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  pointer-events: none;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.25rem;
+  pointer-events: auto;
+}
+
+.badgeIcon {
+  color: var(--red);
+}
+
+.headingWrap {
+  text-align: center;
+}
+
+.heading1 {
+  font-size: clamp(2.8rem, 8.5vw, 7.5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin: 0;
+}
+
+.headingWhite {
+  color: #fff;
+}
+
+.headingRed {
+  color: transparent;
+  background: linear-gradient(to right, var(--red), var(--red-ff));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.heading2 {
+  font-size: clamp(2.2rem, 7vw, 6.5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: #fff;
+  margin: 0.25rem 0 0;
+}
+
+.typewriterText {
+  color: transparent;
+  background: linear-gradient(to right, var(--red), var(--red-hover));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Floating cards */
+.floatCard {
+  position: absolute;
+  z-index: 20;
+}
+
+.leftCard {
+  left: 2rem;
+  bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 210px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.quoteChar {
+  color: var(--red);
+  font-size: 2rem;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.quoteText {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.attribution {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.authorAvatar {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--red), var(--red-hover));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.authorName {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.rightStat {
+  right: 2rem;
+  bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.statBig {
+  font-size: clamp(3rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  text-align: right;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+/* Buttons */
+.buttons {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  white-space: nowrap;
+}
+
+.btnPrimary {
+  background-color: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 8px 24px rgba(185, 0, 11, 0.3);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btnPrimary:hover {
+  background-color: var(--red-hover);
+  transform: scale(1.05);
+}
+
+.btnSecondary {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+.btnSecondary:hover {
+  color: #fff;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Photo */
+.photoWrap {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photoWrap::before {
+  content: '';
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(430px, 62vw);
+  height: min(430px, 62vw);
+  background: radial-gradient(circle at center,
+      rgba(255, 51, 68, 0.45) 0%,
+      rgba(185, 0, 11, 0.18) 40%,
+      rgba(185, 0, 11, 0.03) 65%,
+      transparent 80%);
+  filter: blur(65px);
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 50%;
+  animation: breatheGlow 8s ease-in-out infinite;
+}
+
+@keyframes breatheGlow {
+
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.08);
+    opacity: 1;
+  }
+}
+
+.semicircle {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(380px, 60vw);
+  height: min(380px, 60vw);
+  border-radius: 50% 50% 0 0;
+  background: radial-gradient(ellipse at bottom, rgba(185, 0, 11, 0.16) 0%, rgba(185, 0, 11, 0.04) 60%, transparent 100%);
+  border: 1px solid rgba(185, 0, 11, 0.18);
+}
+
+.ring {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(420px, 60vw);
+  height: min(420px, 60vw);
+  border-radius: 50% 50% 0 0;
+  border: 2px solid rgba(255, 51, 68, 0.45);
+  box-shadow: 0 0 15px rgba(255, 51, 68, 0.25), inset 0 0 15px rgba(255, 51, 68, 0.15);
+  animation: ping 5s cubic-bezier(0.1, 0.8, 0.25, 1) infinite;
+}
+
+@keyframes ping {
+  0% {
+    transform: translateX(-50%) scale(0.95);
+    opacity: 0.9;
+  }
+
+  80%,
+  100% {
+    transform: translateX(-50%) scale(1.12);
+    opacity: 0;
+  }
+}
+
+.photo {
+  position: relative;
+  z-index: 10;
+  height: min(550px, 70vh);
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+  filter: contrast(1.07) brightness(1.05) saturate(1.1);
+  user-select: none;
+}
+
+/* Stats strip */
+.statsStrip {
+  background-color: var(--bg-strip);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.25rem;
+  padding: 1.75rem 1rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.statItem:last-child {
+  border-right: none;
+}
+
+.statNumber {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: #fff;
+}
+
+.statDesc {
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 1023px) {
+
+  .leftCard,
+  .rightStat {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statItem:nth-child(2) {
+    border-right: none;
+  }
+}
+
+/* Pop Culture Floating Objects styling */
+.floatingObject {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  /* behind text content and avatar (z-index 10), but in front of background glow */
+  opacity: 0.65;
+  filter: drop-shadow(0 0 15px rgba(255, 51, 68, 0.4));
+  transition: opacity 0.4s ease, filter 0.4s ease;
+  left: 0;
+  top: 0;
+}
+
+/* 1. Pokéball Bouncing */
+.pokeballWrap {
+  width: 60px;
+  height: 60px;
+  animation: bounceX1 29s linear infinite alternate;
+}
+
+.pokeballInner {
+  animation: bounceY1 23s linear infinite alternate;
+}
+
+.pokeball {
+  width: 100%;
+  height: 100%;
+  animation: rotateObject 35s linear infinite;
+}
+
+/* 2. Gamepad Bouncing */
+.gamepadWrap {
+  width: 65px;
+  height: 65px;
+  animation: bounceX2 37s linear infinite alternate;
+}
+
+.gamepadInner {
+  animation: bounceY2 19s linear infinite alternate;
+}
+
+.gamepad {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 12px rgba(255, 51, 68, 0.55));
+  animation: gamepadFloat 7s ease-in-out infinite;
+}
+
+/* 3. Book Bouncing */
+.bookWrap {
+  width: 55px;
+  height: 55px;
+  animation: bounceX3 41s linear infinite alternate;
+}
+
+.bookInner {
+  animation: bounceY3 17s linear infinite alternate;
+}
+
+.book {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.25));
+  animation: rotateObjectReverse 45s linear infinite;
+}
+
+/* Bouncing Animations (independent X & Y axis transforms to create organic bounces) */
+/* Pokéball bouncing path */
+@keyframes bounceX1 {
+  0% {
+    transform: translateX(2vw);
+  }
+
+  100% {
+    transform: translateX(88vw);
+  }
+}
+
+@keyframes bounceY1 {
+  0% {
+    transform: translateY(8vh);
+  }
+
+  100% {
+    transform: translateY(72vh);
+  }
+}
+
+/* Gamepad bouncing path */
+@keyframes bounceX2 {
+  0% {
+    transform: translateX(85vw);
+  }
+
+  100% {
+    transform: translateX(4vw);
+  }
+}
+
+@keyframes bounceY2 {
+  0% {
+    transform: translateY(12vh);
+  }
+
+  100% {
+    transform: translateY(76vh);
+  }
+}
+
+/* Book bouncing path */
+@keyframes bounceX3 {
+  0% {
+    transform: translateX(6vw);
+  }
+
+  100% {
+    transform: translateX(86vw);
+  }
+}
+
+@keyframes bounceY3 {
+  0% {
+    transform: translateY(74vh);
+  }
+
+  100% {
+    transform: translateY(10vh);
+  }
+}
+
+@keyframes rotateObject {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateObjectReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes gamepadFloat {
+
+  0%,
+  100% {
+    transform: rotate(-5deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(10deg) scale(1.05);
+  }
+}
+
+/* Hide on tablet and mobile screens to keep the hero section layout clean */
+@media (max-width: 991px) {
+  .floatingObject {
+    display: none;
+  }
+}
