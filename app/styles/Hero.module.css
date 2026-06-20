@@ -341,7 +341,7 @@
 .photo {
   position: relative;
   z-index: 10;
-  height: min(550px, 70vh);
+  height: min(550px, 75vh);
   width: auto;
   object-fit: contain;
   object-position: bottom;
