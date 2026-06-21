@@ -17,10 +17,23 @@ export default function Navbar() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // New: scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setMobileOpen(false);
+  };
+
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
-        <div className={styles.logo} data-testid="nav-logo">Falatehan.</div>
+        <div
+          className={styles.logo}
+          onClick={scrollToTop}
+          data-testid="nav-logo"
+          style={{ cursor: 'pointer' }}
+        >
+          Falatehan.
+        </div>
 
         <div className={styles.links}>
           {['About', 'Services', 'Portfolio', 'Contact'].map((item) => (

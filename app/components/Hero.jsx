@@ -67,11 +67,12 @@ export default function Hero() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <>
+    <div className={styles.heroWrapper}>
+      {/* Hero Section */}
       <section id="hero" className={styles.section}>
         <div className={styles.glow} />
 
-        {/* Pop Culture Floating Objects */}
+        {/* Floating objects (unchanged) */}
         <div className={`${styles.floatingObject} ${styles.pokeballWrap}`}>
           <div className={styles.pokeballInner}>
             <svg viewBox="0 0 100 100" className={styles.pokeball}>
@@ -124,8 +125,6 @@ export default function Hero() {
           </div>
         </div>
 
-
-
         <div className={styles.topContent}>
           <div className={styles.badge}>
             <i className={`fa-solid fa-rocket ${styles.badgeIcon}`} />
@@ -141,8 +140,37 @@ export default function Hero() {
               <Typewriter words={['UI/UX Designer', 'Graphic Designer', 'Videographer', 'Photographer']} />
             </h1>
           </div>
+
+          <div className={styles.photoWrap}>
+            <div className={styles.semicircle} />
+            <div className={styles.ring} />
+            <img
+              src="/avatar.png"
+              alt="Falatehan Rais"
+              className={styles.photo}
+              data-testid="hero-avatar"
+            />
+          </div>
+
+          <div className={styles.buttons}>
+            <button
+              onClick={() => scrollTo('portfolio')}
+              className={styles.btnPrimary}
+              data-testid="hero-portfolio-btn"
+            >
+              Portfolio <i className="fa-solid fa-arrow-right" />
+            </button>
+            <button
+              onClick={() => scrollTo('contact')}
+              className={styles.btnSecondary}
+              data-testid="hero-hire-btn"
+            >
+              Hire me
+            </button>
+          </div>
         </div>
 
+        {/* Floating Cards */}
         <div className={`${styles.floatCard} ${styles.leftCard}`}>
           <span className={styles.quoteChar}>&ldquo;</span>
           <p className={styles.quoteText}>
@@ -163,43 +191,16 @@ export default function Hero() {
           <div className={styles.statBig}>3+</div>
           <div className={styles.statLabel}>Years Experience</div>
         </div>
-
-        <div className={styles.buttons}>
-          <button
-            onClick={() => scrollTo('portfolio')}
-            className={styles.btnPrimary}
-            data-testid="hero-portfolio-btn"
-          >
-            Portfolio <i className="fa-solid fa-arrow-right" />
-          </button>
-          <button
-            onClick={() => scrollTo('contact')}
-            className={styles.btnSecondary}
-            data-testid="hero-hire-btn"
-          >
-            Hire me
-          </button>
-        </div>
-
-        <div className={styles.photoWrap}>
-          <div className={styles.semicircle} />
-          <div className={styles.ring} />
-          <img
-            src="/avatar.png"
-            alt="Falatehan Rais"
-            className={styles.photo}
-            data-testid="hero-avatar"
-          />
-        </div>
       </section>
 
+      {/* Stats Strip */}
       <div className={styles.statsStrip}>
-        <div className="container">
+        <div className={styles.statsContainer}>
           <div className={styles.statsGrid}>
             {[
               { target: 3, suffix: '+', label: 'Years Experience' },
-              { target: 4, suffix: '',  label: 'Organizations' },
-              { target: 2, suffix: '',  label: 'Awards Won' },
+              { target: 4, suffix: '', label: 'Organizations' },
+              { target: 2, suffix: '', label: 'Awards Won' },
               { target: 5, suffix: '+', label: 'Projects' },
             ].map((stat, i) => (
               <div key={i} className={styles.statItem}>
@@ -212,6 +213,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
