@@ -308,7 +308,7 @@
   user-select: none;
 }
 
-/* Buttons overlaid on photo – absolutely positioned inside .photoWrap */
+/* Buttons overlaid on photo */
 .buttons {
   position: absolute;
   bottom: 2%;
@@ -319,7 +319,6 @@
   align-items: center;
   gap: 1rem;
   white-space: nowrap;
-  /* No margins; they stay inside photoWrap */
 }
 
 .btnPrimary {
@@ -363,7 +362,7 @@
   text-decoration-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Stats strip – custom container to avoid global padding */
+/* Stats strip */
 .statsStrip {
   background-color: var(--bg-strip);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -504,11 +503,16 @@
   }
 }
 
-/* Pop Culture Floating Objects – unchanged */
+/* ==========================================================
+   POP CULTURE FLOATING OBJECTS – visible on all screens
+   ========================================================== */
+
 .floatingObject {
   position: absolute;
   pointer-events: none;
   z-index: 5;
+  display: block;
+  /* ensure visibility */
   opacity: 0.65;
   filter: drop-shadow(0 0 15px rgba(255, 51, 68, 0.4));
   transition: opacity 0.4s ease, filter 0.4s ease;
@@ -566,6 +570,97 @@
   animation: rotateObjectReverse 45s linear infinite;
 }
 
+/* ---- Film Reel ---- */
+.filmReelWrap {
+  width: 60px;
+  height: 60px;
+  animation: bounceX4 33s linear infinite alternate;
+}
+
+.filmReelInner {
+  animation: bounceY4 21s linear infinite alternate;
+}
+
+.filmReel {
+  width: 100%;
+  height: 100%;
+  animation: rotateObject 40s linear infinite;
+}
+
+/* ---- Videogame Sword ---- */
+.swordWrap {
+  width: 50px;
+  height: 50px;
+  animation: bounceX5 43s linear infinite alternate;
+}
+
+.swordInner {
+  animation: bounceY5 25s linear infinite alternate;
+}
+
+.sword {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3));
+  animation: swordFloat 6s ease-in-out infinite;
+}
+
+/* New bounce keyframes for film reel */
+@keyframes bounceX4 {
+  0% {
+    transform: translateX(10vw);
+  }
+
+  100% {
+    transform: translateX(78vw);
+  }
+}
+
+@keyframes bounceY4 {
+  0% {
+    transform: translateY(20vh);
+  }
+
+  100% {
+    transform: translateY(68vh);
+  }
+}
+
+/* New bounce keyframes for sword */
+@keyframes bounceX5 {
+  0% {
+    transform: translateX(80vw);
+  }
+
+  100% {
+    transform: translateX(12vw);
+  }
+}
+
+@keyframes bounceY5 {
+  0% {
+    transform: translateY(15vh);
+  }
+
+  100% {
+    transform: translateY(80vh);
+  }
+}
+
+/* Sword float animation (subtle rotation) */
+@keyframes swordFloat {
+
+  0%,
+  100% {
+    transform: rotate(-8deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(12deg) scale(1.06);
+  }
+}
+
+/* ---- Large screen keyframes (original) ---- */
 @keyframes bounceX1 {
   0% {
     transform: translateX(2vw);
@@ -658,9 +753,113 @@
   }
 }
 
+/* ---- Tablet & mobile: show, but smaller and less intrusive ---- */
 @media (max-width: 991px) {
   .floatingObject {
-    display: none;
+    opacity: 0.45;
+    filter: drop-shadow(0 0 8px rgba(255, 51, 68, 0.3));
+  }
+
+  .pokeballWrap {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .gamepadWrap {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .bookWrap {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .filmReelWrap {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  /* NEW */
+  .swordWrap {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  /* NEW */
+
+  /* Override bounce keyframes for film reel on tablet */
+  @keyframes bounceX4 {
+    0% {
+      transform: translateX(10vw);
+    }
+
+    100% {
+      transform: translateX(80vw);
+    }
+  }
+
+  @keyframes bounceY4 {
+    0% {
+      transform: translateY(15vh);
+    }
+
+    100% {
+      transform: translateY(65vh);
+    }
+  }
+
+  /* Override bounce keyframes for sword on tablet */
+  @keyframes bounceX5 {
+    0% {
+      transform: translateX(80vw);
+    }
+
+    100% {
+      transform: translateX(10vw);
+    }
+  }
+
+  @keyframes bounceY5 {
+    0% {
+      transform: translateY(20vh);
+    }
+
+    100% {
+      transform: translateY(75vh);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .pokeballWrap {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .gamepadWrap {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .bookWrap {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  .filmReelWrap {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .swordWrap {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .floatingObject {
+    opacity: 0.35;
+    filter: drop-shadow(0 0 5px rgba(255, 51, 68, 0.2));
   }
 }
 

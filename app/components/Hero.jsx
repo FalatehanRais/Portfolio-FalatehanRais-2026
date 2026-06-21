@@ -72,7 +72,9 @@ export default function Hero() {
       <section id="hero" className={styles.section}>
         <div className={styles.glow} />
 
-        {/* Floating objects (unchanged) */}
+        {/* ---- FLOATING OBJECTS ---- */}
+
+        {/* 1. Pokéball */}
         <div className={`${styles.floatingObject} ${styles.pokeballWrap}`}>
           <div className={styles.pokeballInner}>
             <svg viewBox="0 0 100 100" className={styles.pokeball}>
@@ -87,6 +89,7 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* 2. Gamepad */}
         <div className={`${styles.floatingObject} ${styles.gamepadWrap}`}>
           <div className={styles.gamepadInner}>
             <svg viewBox="0 0 100 100" className={styles.gamepad}>
@@ -106,6 +109,7 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* 3. Book */}
         <div className={`${styles.floatingObject} ${styles.bookWrap}`}>
           <div className={styles.bookInner}>
             <svg viewBox="0 0 100 100" className={styles.book}>
@@ -124,6 +128,41 @@ export default function Hero() {
             </svg>
           </div>
         </div>
+
+        {/* 4. Film Reel (movie roller) */}
+        <div className={`${styles.floatingObject} ${styles.filmReelWrap}`}>
+          <div className={styles.filmReelInner}>
+            <svg viewBox="0 0 100 100" className={styles.filmReel}>
+              <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255, 51, 68, 0.8)" strokeWidth="3" />
+              <circle cx="50" cy="50" r="28" fill="none" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="2" />
+              <line x1="50" y1="8" x2="50" y2="28" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="3" strokeLinecap="round" />
+              <line x1="50" y1="72" x2="50" y2="92" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="3" strokeLinecap="round" />
+              <line x1="8" y1="50" x2="28" y2="50" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="3" strokeLinecap="round" />
+              <line x1="72" y1="50" x2="92" y2="50" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="3" strokeLinecap="round" />
+              <line x1="20" y1="20" x2="34" y2="34" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="2" strokeLinecap="round" />
+              <line x1="80" y1="20" x2="66" y2="34" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="2" strokeLinecap="round" />
+              <line x1="20" y1="80" x2="34" y2="66" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="2" strokeLinecap="round" />
+              <line x1="80" y1="80" x2="66" y2="66" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="2" strokeLinecap="round" />
+              <circle cx="50" cy="50" r="8" fill="rgba(255, 51, 68, 0.85)" />
+            </svg>
+          </div>
+        </div>
+
+        {/* 5. Videogame Sword */}
+        <div className={`${styles.floatingObject} ${styles.swordWrap}`}>
+          <div className={styles.swordInner}>
+            <svg viewBox="0 0 100 100" className={styles.sword}>
+              <path d="M 50,10 L 58,30 L 55,30 L 54,45 L 60,50 L 54,55 L 55,70 L 58,70 L 50,90 L 42,70 L 45,70 L 46,55 L 40,50 L 46,45 L 45,30 L 42,30 Z"
+                fill="rgba(255, 255, 255, 0.9)" stroke="rgba(255, 51, 68, 0.6)" strokeWidth="1.5" />
+              <rect x="35" y="45" width="30" height="10" rx="2" fill="rgba(255, 51, 68, 0.85)" />
+              <rect x="44" y="55" width="12" height="25" rx="3" fill="rgba(200, 200, 200, 0.6)" />
+              <circle cx="50" cy="82" r="6" fill="rgba(255, 51, 68, 0.7)" />
+              <circle cx="50" cy="82" r="3" fill="#fff" opacity="0.6" />
+            </svg>
+          </div>
+        </div>
+
+        {/* ---- END FLOATING OBJECTS ---- */}
 
         <div className={styles.topContent}>
           <div className={styles.badge}>
@@ -150,23 +189,22 @@ export default function Hero() {
               className={styles.photo}
               data-testid="hero-avatar"
             />
-          </div>
-
-          <div className={styles.buttons}>
-            <button
-              onClick={() => scrollTo('portfolio')}
-              className={styles.btnPrimary}
-              data-testid="hero-portfolio-btn"
-            >
-              Portfolio <i className="fa-solid fa-arrow-right" />
-            </button>
-            <button
-              onClick={() => scrollTo('contact')}
-              className={styles.btnSecondary}
-              data-testid="hero-hire-btn"
-            >
-              Hire me
-            </button>
+            <div className={styles.buttons}>
+              <button
+                onClick={() => scrollTo('portfolio')}
+                className={styles.btnPrimary}
+                data-testid="hero-portfolio-btn"
+              >
+                Portfolio <i className="fa-solid fa-arrow-right" />
+              </button>
+              <button
+                onClick={() => scrollTo('contact')}
+                className={styles.btnSecondary}
+                data-testid="hero-hire-btn"
+              >
+                Hire me
+              </button>
+            </div>
           </div>
         </div>
 
